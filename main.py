@@ -8,8 +8,9 @@ def mostrar_menu():
     print("0 - Sair")
 
 def adicionar_tarefa():
-    tarefa = input("Digite a tarefa: ")
-    tarefas.append(tarefa)
+    nome = input("Digite a tarefa: ")
+    prioridade = input("Prioridade (Alta / Média / Baixa): ")
+    tarefas.append({"nome": nome, "prioridade": prioridade})
     print("Tarefa adicionada com sucesso!")
 
 def listar_tarefas():
@@ -17,7 +18,7 @@ def listar_tarefas():
         print("Nenhuma tarefa cadastrada.")
     else:
         for i, tarefa in enumerate(tarefas):
-            print(f"{i + 1} - {tarefa}")
+            print(f"{i + 1} - {tarefa['nome']} | Prioridade: {tarefa['prioridade']}")
 
 def remover_tarefa():
     listar_tarefas()
@@ -43,3 +44,4 @@ while True:
         break
     else:
         print("Opção inválida.")
+
